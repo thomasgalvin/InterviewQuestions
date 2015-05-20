@@ -3,15 +3,19 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.galvin.interview</groupId>
-        <artifactId>Interview</artifactId>
+        <artifactId>InterviewQuestions</artifactId>
         <version>1.0</version>
     </parent>
-    <artifactId>InterviewQuestions</artifactId>
-    <name>Interview Questions</name>
+    <artifactId>Developer</artifactId>
+    <name>Developer Interview</name>
     <packaging>pom</packaging>
     
     <modules>
-        <module>JuniorDeveloper</module>
-        <module>Developer</module>
+        <module>DeveloperUtils</module>
+        <module>DeveloperTestUtils</module>
+        
+        <module>ArrayList</module>
+        <module>LinkedList</module>
+        <module>Comparator</module>
     </modules>
 </project>

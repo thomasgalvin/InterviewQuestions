@@ -11,37 +11,17 @@ public class LinkedList implements List {
     
     @Override
     public void add( Object target ) {
-        if( head == null ) {
-            head = new Node( target );
-        }
-        else {
-            Node last = head;
-            while( last.getNext() != null ) {
-                last = last.getNext();
-            }
-            Node next = new Node( target );
-            last.setNext( next );
-        }
+        throw new UnsupportedOperationException( "TODO: Not implemented yet" );
     }
 
     @Override
     public void add( int index, Object target ) {
-        Node newNode = new Node( target );
-        
-        if( index < 0 ) {
-            throw new IllegalArgumentException( "Negative index provided" );
-        }
-        else if( index > size() ) {
-            throw new IllegalArgumentException( "Size of list exceeded" );
-        }
-        else if( index == 0 ) {
-            newNode.setNext( head );
-            head = newNode;
-        } else {
-            Node previous = getNode( index-1 );
-            newNode.setNext( previous.getNext() );
-            previous.setNext( newNode );
-        }
+        throw new UnsupportedOperationException( "TODO: Not implemented yet" );
+    }
+    
+    @Override
+    public void remove( int index ) {
+        throw new UnsupportedOperationException( "TODO: Not implemented yet" );
     }
 
     @Override
@@ -115,24 +95,6 @@ public class LinkedList implements List {
         int index = indexOf( target );
         if( index >= 0 ){
             remove( index );
-        }
-    }
-
-    @Override
-    public void remove( int index ) {
-        checkIndex( index );
-        
-        if( index == 0 ) {
-            head = head.getNext();
-        }
-        else {
-            Node current = getNode( index );
-            Node previous = getNode( index - 1 );
-            Node next = getNode( index + 1 );
-            
-            current.setData( null );
-            current.setNext( null );
-            previous.setNext( next );
         }
     }
 

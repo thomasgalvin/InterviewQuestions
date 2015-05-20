@@ -32,30 +32,17 @@ public class ArrayList implements List {
 
     @Override
     public void add( Object target ) {
-        growArrayIfNecessary();
-        data[nextFreeIndex] = target;
-        nextFreeIndex++;
+        throw new UnsupportedOperationException( "TODO: Not implemented yet" );
     }
 
     @Override
     public void add( int index, Object target ) {
-        if( index > nextFreeIndex ) {
-            throw new ArrayIndexOutOfBoundsException( "Size of array exceeded" );
-        }
-        else if( index < 0 ) {
-            throw new ArrayIndexOutOfBoundsException( "Negative index provided" );
-        }
-        else if( index == nextFreeIndex ) {
-            add( target );
-        }
-        else {
-            growArrayIfNecessary();
-            for( int i = nextFreeIndex; i >= index && i > 0; i-- ) {
-                data[i] = data[i - 1];
-            }
-            data[index] = target;
-            nextFreeIndex++;
-        }
+        throw new UnsupportedOperationException( "TODO: Not implemented yet" );
+    }
+    
+    @Override
+    public void remove( int index ) {
+        throw new UnsupportedOperationException( "TODO: Not implemented yet" );
     }
     
     @Override
@@ -129,18 +116,6 @@ public class ArrayList implements List {
         if( index >= 0 ) {
             remove( index );
         }
-    }
-
-    @Override
-    public void remove( int index ) {
-        checkIndex( index );
-        for( int i = index; i < nextFreeIndex; i++ ) {
-            if( i + 1 < data.length ) {
-                data[i] = data[i + 1];
-            }
-        }
-        nextFreeIndex--;
-        data[nextFreeIndex] = null;
     }
 
     @Override
