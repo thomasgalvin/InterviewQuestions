@@ -10,8 +10,8 @@
   
     <modules>
         <module>Utils</module>
-        <module>InterviewSolutions</module>
-        <!--<module>InterviewQuestions</module>-->
+        <module>Solutions</module>
+        <!--<module>Questions</module>-->
     </modules>
   
     <properties>
