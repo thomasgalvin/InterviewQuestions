@@ -8,6 +8,5 @@
     </parent>
     <artifactId>Utils</artifactId>
     <name>Interview Utils</name>
-    <version>1.0.0</version>
-    <packaging>jar</packaging>
+    <version>1.0</version>
 </project>

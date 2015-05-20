@@ -6,7 +6,7 @@
     <artifactId>Interview</artifactId>
     <version>1.0</version>
     <packaging>pom</packaging>
-    <name>Interview Parent</name>
+    <name>Interview Questions Master</name>
   
     <modules>
         <module>Utils</module>

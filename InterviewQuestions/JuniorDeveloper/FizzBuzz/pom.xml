@@ -7,7 +7,7 @@
         <version>1.0</version>
     </parent>
     <artifactId>FizzBuzz</artifactId>
-    <name>Interview 02 - FizzBuzz</name>
+    <name>Junior Developer 02 - FizzBuzz</name>
     
     <dependencies>
         <dependency>
@@ -20,7 +20,7 @@
         <dependency>
             <groupId>com.galvin.interview</groupId>
             <artifactId>Utils</artifactId>
-            <version>1.0.0</version>
+            <version>1.0</version>
             <scope>test</scope>
         </dependency>
     </dependencies>

@@ -7,7 +7,7 @@
         <version>1.0</version>
     </parent>
     <artifactId>Sums</artifactId>
-    <name>Interview 07 - Sums Solution</name>
+    <name>Junior Developer 07 - Sums Solution</name>
     
     <dependencies>
         <dependency>
@@ -20,7 +20,7 @@
         <dependency>
             <groupId>com.galvin.interview</groupId>
             <artifactId>Utils</artifactId>
-            <version>1.0.0</version>
+            <version>1.0</version>
             <scope>test</scope>
         </dependency>
     </dependencies>

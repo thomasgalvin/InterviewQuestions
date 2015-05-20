@@ -8,10 +8,11 @@
     </parent>
     <groupId>com.galvin.interview.solutions</groupId>
     <artifactId>InterviewSolutions</artifactId>
-    <name>Interview Solutions</name>
+    <name>Junior Developer Solutions</name>
     <packaging>pom</packaging>
     
     <modules>
         <module>JuniorDeveloper</module>
+        <module>Developer</module>
     </modules>
 </project>
