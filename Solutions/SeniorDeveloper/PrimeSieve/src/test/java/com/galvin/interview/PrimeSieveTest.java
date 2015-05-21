@@ -7,7 +7,9 @@ public class PrimeSieveTest
 {
     @Test
     public void testPrimes() throws Exception{
-        int[] expected = findPrimes( 100 );
+        // use a known-to-work algorithm to find the first N primes.
+        // Our stop number will then be one greater than the Nth prime.
+        int[] expected = findPrimes( 1000 );
         int stop = expected[ expected.length - 1 ];
         stop++;
         
@@ -15,6 +17,9 @@ public class PrimeSieveTest
         int[] result = sieve.findPrimes( stop );
         
         Assert.assertArrayEquals( "Bad list of primes", expected, result );
+        for( int prime : result ){
+            System.out.println( prime );
+        }
     }
     
     private int[] findPrimes( int count ){
