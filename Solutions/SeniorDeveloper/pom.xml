@@ -11,6 +11,6 @@
     <packaging>pom</packaging>
     
     <modules>
-        <module>PrimeSieve</module>
+        <!--<module>PrimeSieve</module>-->
     </modules>
 </project>

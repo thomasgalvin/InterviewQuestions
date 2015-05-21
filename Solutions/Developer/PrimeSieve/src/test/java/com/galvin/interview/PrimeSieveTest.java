@@ -17,9 +17,6 @@ public class PrimeSieveTest
         int[] result = sieve.findPrimes( stop );
         
         Assert.assertArrayEquals( "Bad list of primes", expected, result );
-        for( int prime : result ){
-            System.out.println( prime );
-        }
     }
     
     private int[] findPrimes( int count ){

@@ -3,11 +3,11 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.galvin.interview.solutions</groupId>
-        <artifactId>SeniorDeveloper</artifactId>
+        <artifactId>Developer</artifactId>
         <version>1.0</version>
     </parent>
     <artifactId>PrimeSieve</artifactId>
-    <name>Senior Developer 01 - Prime Sieve Solution</name>
+    <name>Developer 05 - Prime Sieve Solution</name>
     
     <dependencies>
         <dependency>
