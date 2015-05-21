@@ -6,7 +6,6 @@
         <artifactId>Developer</artifactId>
         <version>1.0</version>
     </parent>
-    <groupId>com.galvin.interview</groupId>
     <artifactId>LinkedList</artifactId>
     <name>Developer 02 - Linked List Solution</name>
     
