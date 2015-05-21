@@ -17,5 +17,6 @@
         <module>ArrayList</module>
         <module>LinkedList</module>
         <module>Comparator</module>
+        <module>QuickSort</module>
     </modules>
 </project>

@@ -40,24 +40,7 @@ public class QuickSort {
      * @param high   the highest index to partition, inclusive
      */
     private void sort( List<Integer> target, int low, int high ) {
-        if( low >= high ) {
-            return;
-        }
-
-        int pivotIndex = low;
-        Integer pivotValue = target.get( pivotIndex );
-
-        for( int i = low + 1; i <= high; i++ ) {
-            Integer testValue = target.get( i );
-            if( needSwap( pivotValue, testValue ) ) {
-                target.remove( i );
-                target.add( pivotIndex, testValue );
-                pivotIndex++;
-            }
-        }
-
-        sort( target, low, pivotIndex - 1 );
-        sort( target, pivotIndex + 1, high );
+        throw new UnsupportedOperationException( "TODO: Implement the QuickSort algorithm." );
     }
 
     private boolean needSwap( Integer i1, Integer i2 ) {
