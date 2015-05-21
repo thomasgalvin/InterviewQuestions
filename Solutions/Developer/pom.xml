@@ -7,7 +7,7 @@
         <version>1.0</version>
     </parent>
     <artifactId>Developer</artifactId>
-    <name>Developer Interview Solutions</name>
+    <name>Solutions: Developer Interview</name>
     <packaging>pom</packaging>
     
     <modules>

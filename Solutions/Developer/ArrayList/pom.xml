@@ -7,7 +7,7 @@
         <version>1.0</version>
     </parent>
     <artifactId>ArrayList</artifactId>
-    <name>Developer 01 - Array List Solution</name>
+    <name>Solution: Developer 01 - Array List</name>
     
     <dependencies>
         <dependency>

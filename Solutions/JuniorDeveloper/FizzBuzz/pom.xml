@@ -7,7 +7,7 @@
         <version>1.0</version>
     </parent>
     <artifactId>FizzBuzz</artifactId>
-    <name>Junior Developer 02 - FizzBuzz Solution</name>
+    <name>Solution: Junior Developer 02 - FizzBuzz</name>
     
     <dependencies>
         <dependency>

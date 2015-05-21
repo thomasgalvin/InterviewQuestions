@@ -7,7 +7,7 @@
         <version>1.0</version>
     </parent>
     <artifactId>Reverse</artifactId>
-    <name>Junior Developer 08 - String Reverse Solution</name>
+    <name>Solution: Junior Developer 08 - String Reverse</name>
     
     <dependencies>
         <dependency>

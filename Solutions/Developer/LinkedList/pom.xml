@@ -7,7 +7,7 @@
         <version>1.0</version>
     </parent>
     <artifactId>LinkedList</artifactId>
-    <name>Developer 02 - Linked List Solution</name>
+    <name>Solution: Developer 02 - Linked List</name>
     
     <dependencies>
         <dependency>

@@ -7,7 +7,7 @@
         <version>1.0</version>
     </parent>
     <artifactId>Comparator</artifactId>
-    <name>Developer 03 - Comparator Solution</name>
+    <name>Solution: Developer 03 - Comparator</name>
     
     <dependencies>
         <dependency>

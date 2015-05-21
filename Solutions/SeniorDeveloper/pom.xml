@@ -7,10 +7,9 @@
         <version>1.0</version>
     </parent>
     <artifactId>SeniorDeveloper</artifactId>
-    <name>Senior Interview Solutions</name>
+    <name>Solutions: Senior Interview</name>
     <packaging>pom</packaging>
     
     <modules>
-        <!--<module>PrimeSieve</module>-->
     </modules>
 </project>
