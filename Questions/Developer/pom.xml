@@ -18,5 +18,6 @@
         <module>LinkedList</module>
         <module>Comparator</module>
         <module>QuickSort</module>
+        <module>PrimeSieve</module>
     </modules>
 </project>

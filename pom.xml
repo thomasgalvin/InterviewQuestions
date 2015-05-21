@@ -11,7 +11,7 @@
     <modules>
         <module>Utils</module>
         <module>Solutions</module>
-        <!--<module>Questions</module>-->
+        <module>Questions</module>
     </modules>
   
     <properties>
