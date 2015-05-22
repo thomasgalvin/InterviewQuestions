@@ -7,7 +7,7 @@
         <version>1.0</version>
     </parent>
     <artifactId>TestUtils</artifactId>
-    <name>Interview Test Utils</name>
+    <name>Test Utils</name>
     
     <dependencies>
         <dependency>

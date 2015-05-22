@@ -7,7 +7,7 @@
         <version>1.0</version>
     </parent>
     <artifactId>QuickSort</artifactId>
-    <name>Developer 04 - QuickSort</name>
+    <name>Developer 05 - QuickSort</name>
     
     <dependencies>
         <dependency>

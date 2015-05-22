@@ -60,8 +60,8 @@ The interview for a Developer position includes the following projects:
 * **Developer 01 - Array List** - Write `add` and `delete` methods for an Array List.
 * **Developer 02 - Linked List** - Write `add` and `delete` methods for a Linked List.
 * **Developer 03 - Comparator** - Write an implementation of a java.util.Comparator, using provided criteria
-* **Developer 04 - Quick Sort** -Implement the QuickSort algorithm
-* **Developer 05 - Prime Sieve** -Implement the Sieve of Eratosthenes to find prime numbers
+* **Developer 04 - Prime Sieve** -Implement the Sieve of Eratosthenes to find prime numbers
+* **Developer 05 - Quick Sort** -Implement the QuickSort algorithm
 
 ## Solutions ##
 

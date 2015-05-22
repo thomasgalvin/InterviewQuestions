@@ -7,7 +7,7 @@
         <version>1.0</version>
     </parent>
     <artifactId>PrimeSieve</artifactId>
-    <name>Solution: Developer 05 - Prime Sieve</name>
+    <name>Solution: Developer 04 - Prime Sieve</name>
     
     <dependencies>
         <dependency>
