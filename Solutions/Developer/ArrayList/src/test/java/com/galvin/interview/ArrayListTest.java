@@ -1,5 +1,7 @@
 package com.galvin.interview;
 
+import com.galvin.interview.utils.ListFactory;
+import com.galvin.interview.utils.ListTestHarness;
 import org.junit.Test;
 
 public class ArrayListTest

@@ -3,9 +3,9 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.galvin.interview</groupId>
-        <artifactId>Developer</artifactId>
+        <artifactId>Utils</artifactId>
         <version>1.0</version>
     </parent>
-    <artifactId>DeveloperUtils</artifactId>
-    <name>Developer Utils</name>
+    <artifactId>List</artifactId>
+    <name>Test Utils: List Interface</name>
 </project>

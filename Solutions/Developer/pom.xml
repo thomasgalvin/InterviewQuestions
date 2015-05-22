@@ -11,9 +11,6 @@
     <packaging>pom</packaging>
     
     <modules>
-        <module>DeveloperUtils</module>
-        <module>DeveloperTestUtils</module>
-        
         <module>ArrayList</module>
         <module>LinkedList</module>
         <module>Comparator</module>

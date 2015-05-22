@@ -1,5 +1,6 @@
-package com.galvin.interview;
+package com.galvin.interview.utils;
 
+import com.galvin.interview.List;
 import org.junit.Assert;
 
 public class ListTestHarness

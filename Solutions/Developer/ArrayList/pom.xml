@@ -11,22 +11,15 @@
     
     <dependencies>
         <dependency>
-            <groupId>com.galvin.interview.solutions</groupId>
-            <artifactId>DeveloperUtils</artifactId>
-            <version>1.0</version>
-        </dependency>
-        
-        <dependency>
-            <groupId>com.galvin.interview.solutions</groupId>
-            <artifactId>DeveloperTestUtils</artifactId>
+            <groupId>com.galvin.interview</groupId>
+            <artifactId>TestUtils</artifactId>
             <version>1.0</version>
         </dependency>
         
         <dependency>
             <groupId>com.galvin.interview</groupId>
-            <artifactId>Utils</artifactId>
+            <artifactId>List</artifactId>
             <version>1.0</version>
-            <scope>test</scope>
         </dependency>
     </dependencies>
 </project>

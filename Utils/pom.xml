@@ -8,5 +8,10 @@
     </parent>
     <artifactId>Utils</artifactId>
     <name>Interview Utils</name>
-    <version>1.0</version>
+    <packaging>pom</packaging>
+    
+    <modules>
+        <module>List</module>
+        <module>TestUtils</module>
+    </modules>
 </project>

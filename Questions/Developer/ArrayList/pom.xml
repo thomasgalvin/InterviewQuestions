@@ -12,21 +12,14 @@
     <dependencies>
         <dependency>
             <groupId>com.galvin.interview</groupId>
-            <artifactId>DeveloperUtils</artifactId>
+            <artifactId>TestUtils</artifactId>
             <version>1.0</version>
         </dependency>
         
         <dependency>
             <groupId>com.galvin.interview</groupId>
-            <artifactId>DeveloperTestUtils</artifactId>
+            <artifactId>List</artifactId>
             <version>1.0</version>
-        </dependency>
-        
-        <dependency>
-            <groupId>com.galvin.interview</groupId>
-            <artifactId>Utils</artifactId>
-            <version>1.0</version>
-            <scope>test</scope>
         </dependency>
     </dependencies>
 </project>
