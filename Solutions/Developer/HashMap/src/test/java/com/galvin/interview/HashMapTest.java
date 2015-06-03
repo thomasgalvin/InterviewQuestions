@@ -1,12 +1,14 @@
 package com.galvin.interview;
 
+import java.util.List;
+import java.util.ArrayList;
 import org.junit.Assert;
 import org.junit.Test;
 
 public class HashMapTest
 {
     @Test
-    public void testLinkedList() throws Exception {
+    public void testHashMap() throws Exception {
         HashMap hashMap = new HashMap();
         String[][] entries = {
             { "A", "Alli" },
@@ -44,6 +46,49 @@ public class HashMapTest
         for( String[] entry : entries ){
             Object value = hashMap.get( entry[0] );
             Assert.assertEquals( "HashMap returned wrong value for " + entry[0], entry[1], value );
+        }
+        
+        String[] badKeys = new String[]{
+            "1", "2", "3", "ABC", "DEF", "GHI"
+        };
+        
+        for( String key : badKeys ){
+            Object value = hashMap.get( key );
+            Assert.assertNull( "HashMap returned a value when null was expected for key: " + key, value  );
+        }
+        
+        List<String> removedKeys = new ArrayList();
+        String[] toRemove = { "Z", "A", "M" };
+        for( String key : toRemove ){
+            System.out.println( "**" );
+            System.out.println( "**" );
+            System.out.println( "**" );
+            System.out.println( "**" );
+            System.out.println( "**" );
+            System.out.println( "**" );
+            System.out.println( "Removing key: " + key );
+            removedKeys.add( key );
+            hashMap.remove( key );
+            
+            for( String[] entry : entries ){
+                Object value = hashMap.get( entry[0] );
+                
+                if( removedKeys.contains( entry[0] ) ){
+                    Assert.assertNull( "HashMap returned a value when null was expected for key: " + key, value  );
+                }
+                else {
+                    Assert.assertEquals( "HashMap returned wrong value for " + entry[0], entry[1], value );
+                }
+            }
+        }
+        
+        for( String[] entry : entries ){
+            hashMap.remove( entry[0] );
+        }
+        
+        for( String[] entry : entries ){
+            Object value = hashMap.get( entry[0] );
+            Assert.assertNull( "HashMap returned a value when null was expected for key: " + entry[0], value  );
         }
     }
 }
