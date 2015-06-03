@@ -58,7 +58,7 @@ public class HashMapTest
         }
         
         List<String> removedKeys = new ArrayList();
-        String[] toRemove = { "Z", "A", "M" };
+        String[] toRemove = { "Z", "A", "C", "M", "B", "Y" };
         for( String key : toRemove ){
             System.out.println( "**" );
             System.out.println( "**" );

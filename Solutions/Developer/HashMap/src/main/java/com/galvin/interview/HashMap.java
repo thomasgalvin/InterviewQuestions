@@ -22,29 +22,32 @@ public class HashMap {
     }
 
     public void remove( Object key ) {
-        System.out.println( "Removing: " + key + " at " + key.hashCode() );
+        System.out.println( "Removing: " + key );
         int location = find( key.hashCode() );
         if( location >= 0 ) {
-            print( "Before:" );
+            System.out.println( "    Removing: " + key + " at " + key.hashCode() );
+            print( "    Before:" );
 
             entries[location] = null;
 
-            for( int i = location; i < index - 1; i++ ) {
+            for( int i = location; i < entries.length - 1; i++ ) {
                 entries[i] = entries[i + 1];
             }
-            
-            for( int i = index; i < entries.length; i++ ){
-                entries[i] = null;
-            }
+            entries[entries.length - 1] = null;
             
             index--;
 
-            print( "After:" );
+            print( "    After:" );
+            System.out.println( "---" );
+        }
+        else {
+            System.out.println( "    Not found" );
         }
     }
 
     private void print( String name ) {
         System.out.println( name );
+        System.out.print( "    " );
         for( int i = 0; i < entries.length; i++ ) {
             System.out.print( entries[i] );
             System.out.print( " " );
