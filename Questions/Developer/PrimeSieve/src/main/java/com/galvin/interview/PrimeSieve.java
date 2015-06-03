@@ -1,9 +1,5 @@
 package com.galvin.interview;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-
 /**
  * This class implements the Sieve of Eratosthenes, an efficient way of finding
  * primes below a given stop point.

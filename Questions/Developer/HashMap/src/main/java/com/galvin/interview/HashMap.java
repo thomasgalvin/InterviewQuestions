@@ -40,62 +40,15 @@ public class HashMap {
     private int index = -1;
 
     public void put( Object key, Object value ) {
-        int keyHash = key.hashCode();
-        Entry entry = new Entry( keyHash, value );
-        add( entry );
+        throw new UnsupportedOperationException( "TODO: Implement HashMap.put()" );
     }
 
     public Object get( Object key ) {
-        int location = find( key.hashCode() );
-        if( location >= 0 ) {
-            return entries[location].getValue();
-        }
-        return null;
+        throw new UnsupportedOperationException( "TODO: Implement HashMap.get()" );
     }
 
     public void remove( Object key ) {
-        int location = find( key.hashCode() );
-        if( location >= 0 ) {
-            entries[location] = null;
-            index--;
-            
-            for( int i = location; i < entries.length - 1; i++ ) {
-                entries[i] = entries[i + 1];
-            }
-            entries[entries.length - 1] = null;
-        }
-    }
-
-    private void add( Entry entry ) {
-        int keyHash = entry.getKeyHash();
-        int location = find( keyHash );
-        if( location >= 0 ) {
-            entries[location] = entry;
-        }
-        else {
-            index++;
-            if( index >= entries.length ) {
-                Entry[] tmp = new Entry[ entries.length * MULTIPLIER ];
-                for( int i = 0; i < entries.length; i++ ) {
-                    tmp[i] = entries[i];
-                }
-                entries = tmp;
-                tmp = null;
-            }
-
-            entries[index] = entry;
-        }
-    }
-
-    private int find( int keyHash ) {
-        for( int i = 0; i <= index; i++ ) {
-            if( entries[i] != null ) {
-                if( entries[i].getKeyHash() == keyHash ) {
-                    return i;
-                }
-            }
-        }
-        return -1;
+        throw new UnsupportedOperationException( "TODO: Implement HashMap.remove()" );
     }
 
     /**

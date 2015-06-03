@@ -14,7 +14,8 @@
         <module>ArrayList</module>
         <module>LinkedList</module>
         <module>Comparator</module>
-        <module>QuickSort</module>
+        <module>HashMap</module>
         <module>PrimeSieve</module>
+        <module>QuickSort</module>
     </modules>
 </project>
