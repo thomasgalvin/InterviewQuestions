@@ -1,7 +1,7 @@
 package com.galvin.interview;
 
 /**
- * This program calculates the sum on the numbers in an array, but provides
+ * This program calculates the sum of the numbers in an array, but provides
  * three different methods of doing so; the first uses a for-loop, the second
  * a while-loop, and the third uses recursion.
  * 
