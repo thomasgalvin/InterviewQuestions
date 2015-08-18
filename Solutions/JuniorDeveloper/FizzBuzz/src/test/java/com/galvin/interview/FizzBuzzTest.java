@@ -17,7 +17,14 @@ public class FizzBuzzTest
         
         String result = ConsoleGrabber.releaseConsole().trim();
         String expected = getFizzBuzzOutput();
-        Assert.assertEquals( UNEXPECTED_CONSOLE_OUTPUT, expected, result );
+        
+        String[] resultTokens = result.split( "\n" );
+        String[] expectedTokens = expected.split( "\n" );
+        
+        Assert.assertEquals( UNEXPECTED_CONSOLE_OUTPUT, expectedTokens.length, resultTokens.length );
+        for( int i = 0; i < resultTokens.length; i++ ){
+            Assert.assertEquals( UNEXPECTED_CONSOLE_OUTPUT, expectedTokens[i].trim(), resultTokens[i].trim() );
+        }
     }
     
     private String getFizzBuzzOutput(){
