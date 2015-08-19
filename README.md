@@ -21,9 +21,14 @@ When we write code, we have a bunch of tools to help us. We have IDEs that color
 
 That's what this project is for.
 
-`InterviewQuestions` is a collection of Maven projects, each of which contains a method for the candidate to implement and a unit test to make sure they did it right. If the unit test passes, so do they. And if it fails, you get to see how they deal with a setback, how they debug the problem, and how they check their own thinking in search of the correct answer.
+`InterviewQuestions` contains two collections of problems: one for Java Developers, and one for Web Developers.
 
-## Using this project ##
+## Java Developer Questions ##
+
+
+`JavaDeveloper` is a collection of Maven projects, each of which contains a method for the candidate to implement and a unit test to make sure they did it right. If the unit test passes, so do they. And if it fails, you get to see how they deal with a setback, how they debug the problem, and how they check their own thinking in search of the correct answer.
+
+### Using this project ###
 
 To use this project, clone it:
 
@@ -32,11 +37,11 @@ To use this project, clone it:
 And then build it:
 
 ```
-cd InterviewQuestions
+cd InterviewQuestions/JavaDeveloper
 mvn clean install 
 ```
 
-This will build some utilities needed by the unit tests. It will also build and test the `InterviewSolutions` project, to make sure nothing about your environment has uncovered a bug in the tests. After that, you can open up the Questions projects in an IDE (or not, it's up to you), and let the candidate work through them. 
+This will build some utilities needed by the unit tests. It will also build and test the `Solutions` project, to make sure nothing about your environment has uncovered a bug in the tests. After that, you can open up the Questions projects in an IDE (or not, it's up to you), and let the candidate work through them. 
 
 ## Junior Developer Questions ##
 
@@ -53,7 +58,7 @@ The interview for a Junior Developer position includes the following projects:
 * **Junior Developer 09 - Factorial** - Write a method that calculates the factorial of an integer.
 * **Junior Developer 10 - Find Primes** - Write a method that finds the first 100 prime numbers.
 
-## Developer Questions ##
+### Developer Questions ###
 
 The interview for a Developer position includes the following projects:
 
@@ -63,12 +68,10 @@ The interview for a Developer position includes the following projects:
 * **Developer 04 - Prime Sieve** -Implement the Sieve of Eratosthenes to find prime numbers
 * **Developer 05 - Quick Sort** -Implement the QuickSort algorithm
 
-## Solutions ##
+### Solutions ###
 
-This project also includes an `InterviewSolutions` module, with working answers to all of these questions.
+This project also includes an `Solutions` module, with working answers to all of these questions. These aren't intended to be the One True Way to solve these problems, and some of them intentionally use simplistic logic or code structure. These code samples are here for learning purposes. This is all stuff that should have been covered in any four-year computer science degree, and if someone checks out this code and learns something new, I consider that a win.
 
-That probably makes some of you angry. What good is a suite of test questions if the candidate can just download the answers ahead of time!
+## Web Developer ##
 
-Well, two things. First, if they know what GitHub is and how to clone a project, they're probably good enough to solve these problems anyway.
-
-Second, these aren't trick questions. This is all stuff that should have been covered in any four-year computer science degree. If the potential candidate checks out this code and learns something new, I consider that a win.
+The `WebDeveloper` project is a work in progress.
