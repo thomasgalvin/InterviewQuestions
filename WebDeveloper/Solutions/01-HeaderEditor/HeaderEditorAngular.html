@@ -3,9 +3,6 @@
     <head>
         <title>Header Editor - AngularJS</title>
         
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
-        
         <style>
             body {
                 text-align: justify;
@@ -46,6 +43,7 @@
                 <div ng-bind-html="ctrl.blogPost.body"></div>
             </article>
             
+            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
             <script>
                 var module = angular.module( 'HeaderEditor', [] );
                 module.controller( "HeaderEditorCtrl", [
@@ -75,7 +73,7 @@
                             authorLink: "https://mycompany.com/monvoisinc",
                             datetime: "2015-09-31 20:00",
                             date: "Saturday at 8pm",
-                            body: $sce.trustAsHtml( lorem + lorem + lorem )
+                            body: $sce.trustAsHtml( lorem + lorem + lorem + lorem )
                         };
                         
                         /// Edit mode

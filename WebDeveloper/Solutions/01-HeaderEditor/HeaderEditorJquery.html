@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Header Editor - Vanilla Javascript</title>
+        <title>Header Editor - JQuery</title>
         
         <style>
             body {
@@ -73,83 +73,82 @@
                    occaecat cupidatat non proident, sunt in culpa qui officia 
                    deserunt mollit anim id est laborum.</p>
             </article>
+            
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+            <script>
+                //bootstrap everything when the document has rendered
+                // and jQuery is ready to go
+                $(document).ready( function() {
+                    //the <h1> element wrapping the header text and edit button
+                    function getHeaderDisplay() {
+                        return $("#header-display");
+                    }
+                    
+                    //the <span> containing the header text
+                    function getHeaderContent() {
+                        return $("#header-content");
+                    }
+                    
+                    //the button clicked to switch into edit more
+                    function getEditHeaderButton() {
+                        return $("#header-edit-button");
+                    }
+                    
+                    //the <h1> elements contianing the text input and save button
+                    function getHeaderEdit() {
+                        return $("#header-edit");
+                    }
+                    
+                    //the <input> used to used the header text
+                    function getHeaderInput() {
+                        return $("#header-input");
+                    }
+                    
+                    //the button clicked to save changes
+                    function getSaveHeaderButton() {
+                        return $("#header-save-button");
+                    }
+                    
+                    //copies the contents of the display blocl into the input, hides 
+                    //the display block, and shows the edit block
+                    function editMode() {
+                        var headerText = getHeaderContent().html();
+                        getHeaderInput().val( headerText );
+                        
+                        getHeaderDisplay().hide();
+                        getHeaderEdit().show();
+                    }
+                    
+                    //copies the value of the <input> into the display block,
+                    //hides the edit block, and shows the display block
+                    function displayMode() {
+                        var headerText = getHeaderInput().val();
+                        getHeaderContent().html( headerText );
+                        
+                        getHeaderDisplay().show();
+                        getHeaderEdit().hide();
+                    }
+                    
+                    //detects the return key being pressed inside of the <input>
+                    //and calls the same method as clicking the save button
+                    function inputChanged(e) {
+                        if( !e ){
+                            e = window.event;
+                        }
+                        
+                        var keyCode = e.keyCode || e.which;
+                        if (keyCode == '13'){
+                            // Enter pressed
+                            displayMode();
+                            return false;
+                        }
+                    }
+                    
+                    getEditHeaderButton().click( editMode );
+                    getSaveHeaderButton().click( displayMode );
+                    getHeaderInput().keypress( inputChanged );
+                });
+            </script>
         </section>
-        
-        <script>
-            //anonymous function to bootstrap everything
-            (function() {
-                    
-                //the <h1> element wrapping the header text and edit button
-                function getHeaderDisplay() {
-                    return document.getElementById("header-display");
-                }
-                
-                //the <span> containing the header text
-                function getHeaderContent() {
-                    return document.getElementById("header-content");
-                }
-                
-                //the button clicked to switch into edit more
-                function getEditHeaderButton() {
-                    return document.getElementById("header-edit-button");
-                }
-                
-                //the <h1> elements contianing the text input and save button
-                function getHeaderEdit() {
-                    return document.getElementById("header-edit");
-                }
-                
-                //the <input> used to used the header text
-                function getHeaderInput() {
-                    return document.getElementById("header-input");
-                }
-                
-                //the button clicked to save changes
-                function getSaveHeaderButton() {
-                    return document.getElementById("header-save-button");
-                }
-                
-                //copies the contents of the display blocl into the input, hides 
-                //the display block, and shows the edit block
-                function editMode() {
-                    var headerText = getHeaderContent().innerHTML;
-                    var headerInput = getHeaderInput();
-                    headerInput.value = headerText;
-                    
-                    getHeaderDisplay().style.display = "none";
-                    getHeaderEdit().style.display = "";
-                }
-                
-                //copies the value of the <input> into the display block,
-                //hides the edit block, and shows the display block
-                function displayMode() {
-                    var headerText = getHeaderInput().value;
-                    var headerContent = getHeaderContent();
-                    headerContent.innerHTML = headerText;
-                    
-                    getHeaderDisplay().style.display = "";
-                    getHeaderEdit().style.display = "none";
-                }
-                
-                //detects the return key being pressed inside of the <input>
-                //and calls the same method as clicking the save button
-                function inputChanged(e) {
-                    if( !e ){
-                        e = window.event;
-                    }
-                    
-                    var keyCode = e.keyCode || e.which;
-                    if (keyCode == '13'){
-                        // Enter pressed
-                        displayMode();
-                        return false;
-                    }
-                }
-                
-                getEditHeaderButton().onclick = editMode;
-                getSaveHeaderButton().onclick = displayMode;
-                getHeaderInput().onkeypress = inputChanged;
-            })();//executing the anonymous function
-        </script>
     </body>
 </html>
