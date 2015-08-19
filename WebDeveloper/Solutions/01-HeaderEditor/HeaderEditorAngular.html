@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Header Editor</title>
+        <title>Header Editor - AngularJS</title>
         
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
@@ -26,15 +26,15 @@
     <body ng-app="HeaderEditor" ng-controller="HeaderEditorCtrl as ctrl">
         <section>
             <article>
-                <h1 ng-show="!ctrl.editHeaderMode()">
+                <h1 ng-show="!ctrl.editMode()">
                   <span ng-bind="ctrl.blogPost.title"></span>
-                  <button type="button" ng-click="ctrl.toggleEditHeaderMode()">Edit</button>
+                  <button type="button" ng-click="ctrl.toggleEditMode()">Edit</button>
                 </h1>
                 
-                <h1 ng-show="ctrl.editHeaderMode()">
-                    <form ng-submit="ctrl.toggleEditHeaderMode()">
+                <h1 ng-show="ctrl.editMode()">
+                    <form ng-submit="ctrl.toggleEditMode()">
                         <input ng-model="ctrl.blogPost.title" />
-                        <button type="button" ng-click="ctrl.toggleEditHeaderMode()">Done</button>
+                        <button type="button" ng-click="ctrl.toggleEditMode()">Done</button>
                     </form> 
                 </h1>
                 
@@ -79,19 +79,19 @@
                         };
                         
                         /// Edit mode
-                        ///   If isEditHeaderMode is truthy, the text editor 
+                        ///   If isEditMode is truthy, the text editor 
                         ///   widget for the blog post title will be shown.
                         ///   Otherwise, the blog post title will be displayed
                         ///   inside of an <h1> tag
                         
-                        var isEditHeaderMode = false;
+                        var isEditMode = false;
                         
-                        ctrl.editHeaderMode = function() {
-                            return isEditHeaderMode;
+                        ctrl.editMode = function() {
+                            return isEditMode;
                         }
                         
-                        ctrl.toggleEditHeaderMode = function() {
-                            isEditHeaderMode = !isEditHeaderMode;
+                        ctrl.toggleEditMode = function() {
+                            isEditMode = !isEditMode;
                         }
                     }
                 ] );
