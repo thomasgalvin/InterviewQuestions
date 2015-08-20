@@ -7,7 +7,7 @@
         <version>1.0</version>
     </parent>
     <artifactId>Fibb</artifactId>
-    <name>Solution: Junior Developer 06 - Fibonacci</name>
+    <name>Solution: Junior Developer 07 - Fibonacci</name>
     
     <dependencies>
         <dependency>

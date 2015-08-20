@@ -7,7 +7,7 @@
         <version>1.0</version>
     </parent>
     <artifactId>Sums</artifactId>
-    <name>Junior Developer 07 - Sums</name>
+    <name>Junior Developer 08 - Sums</name>
     
     <dependencies>
         <dependency>

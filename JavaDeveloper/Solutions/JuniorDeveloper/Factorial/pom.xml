@@ -7,7 +7,7 @@
         <version>1.0</version>
     </parent>
     <artifactId>Factorial</artifactId>
-    <name>Solution: Junior Developer 09 - Factorial</name>
+    <name>Solution: Junior Developer 10 - Factorial</name>
     
     <dependencies>
         <dependency>

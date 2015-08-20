@@ -18,10 +18,6 @@ public class Sums
     }
     
     public double recursiveSum( double[] numbers ) {
-        return recursiveSum( numbers, 0 );
-    }
-    
-    private double recursiveSum( double[] numbers, int index ) {
         throw new UnsupportedOperationException( "TODO: Implement me using recursion!" );
     }
 }
