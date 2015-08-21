@@ -23,7 +23,17 @@ public class AtoZ
      * @return if the string starts with an uppercase letter A-Z
      */
     public boolean match(String target ) {
+        return regex( target );
+        //return charMath( target );
+    }
+    
+    private boolean regex( String target ){
         return target.matches( CASE_PATTERN );
+    }
+    
+    private boolean charMath( String target ){
+        char firstChar = target.charAt( 0 );
+        return firstChar >= 'A' && firstChar <= 'Z';
     }
     
     /**
@@ -33,6 +43,17 @@ public class AtoZ
      * @return if the string starts with a letter A-Z, regardless of case
      */
     public boolean matchIgnoreCase(String target ) {
+        return regexIgnoreCase( target );
+        //return charMathIgnoreCase( target );
+    }
+    
+    private boolean regexIgnoreCase( String target ){
         return target.matches( CASELESS_PATTERN );
+    }
+    
+    private boolean charMathIgnoreCase( String target ){
+        char firstChar = target.charAt( 0 );
+        return (firstChar >= 'A' && firstChar <= 'Z') ||
+               (firstChar >= 'a' && firstChar <= 'z');
     }
 }
