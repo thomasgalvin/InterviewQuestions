@@ -47,7 +47,7 @@ public class QuickSort {
         int pivotIndex = low;
         Integer pivotValue = target.get( pivotIndex );
 
-        for( int i = low + 1; i <= high; i++ ) {
+        for( int i = pivotIndex + 1; i <= high; i++ ) {
             Integer testValue = target.get( i );
             if( needSwap( pivotValue, testValue ) ) {
                 target.remove( i );
