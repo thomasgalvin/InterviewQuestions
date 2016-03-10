@@ -12,9 +12,6 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
-import org.apache.commons.lang3.StringUtils;
-import org.pegdown.Extensions;
-import org.pegdown.PegDownProcessor;
 
 @Path( "posts" )
 @Produces( MediaType.APPLICATION_JSON )
@@ -22,7 +19,6 @@ import org.pegdown.PegDownProcessor;
 @Api(value="posts", description="CRUD for blog posts")
 public class BlogResource
 {
-    private PegDownProcessor pegdown = new PegDownProcessor( Extensions.ALL );
     private BlogDB db;
     
     public BlogResource(BlogDB db){
@@ -37,7 +33,7 @@ public class BlogResource
         
         for( BlogPost post : result ){
             post.setBody(null);
-            generateHtml( post );
+            post.setBodyAsHtml(null);
         }
         
         return new BlogPostList( result );
@@ -47,22 +43,7 @@ public class BlogResource
     @Path( "/{id}" )
     public BlogPost get( @PathParam("id") String id ){
         BlogPost result = db.get(id);
-        generateHtml( result );
         return result;
-    }
-    
-    private void generateHtml( BlogPost post ){
-        String pull = post.getPullQuote();
-        if( !StringUtils.isBlank( pull ) ){
-            pull = pegdown.markdownToHtml( pull );
-            post.setPullQuote( pull );
-        }
-        
-        String body = post.getBody();
-        if( !StringUtils.isBlank( body ) ){
-            body = pegdown.markdownToHtml( body );
-            post.setBody( body );
-        }
     }
     
     @POST

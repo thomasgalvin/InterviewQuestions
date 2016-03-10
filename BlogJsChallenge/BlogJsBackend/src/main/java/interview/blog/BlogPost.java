@@ -9,6 +9,9 @@ public class BlogPost
     private String authorEmail;
     private String pullQuote;
     private String body;
+    
+    private String pullQuoteAsHtml;
+    private String bodyAsHtml;
 
     public BlogPost() {
     }
@@ -19,7 +22,9 @@ public class BlogPost
                      String author, 
                      String authorEmail, 
                      String pullQuote, 
-                     String body ) {
+                     String body,
+                     String pullQuoteAsHtml,
+                     String bodyAsHtml ) {
         this.uuid = uuid;
         this.title = title;
         this.pubDate = pubDate;
@@ -27,10 +32,12 @@ public class BlogPost
         this.authorEmail = authorEmail;
         this.pullQuote = pullQuote;
         this.body = body;
+        this.pullQuoteAsHtml = pullQuoteAsHtml;
+        this.bodyAsHtml = bodyAsHtml;
     }
     
     public BlogPost clone(){
-        return new BlogPost( uuid, title, pubDate, author, authorEmail, pullQuote, body );
+        return new BlogPost( uuid, title, pubDate, author, authorEmail, pullQuote, body, pullQuoteAsHtml, bodyAsHtml );
     }
 
     public String getUuid() {
@@ -87,6 +94,22 @@ public class BlogPost
 
     public void setBody( String body ) {
         this.body = body;
+    }
+
+    public String getPullQuoteAsHtml() {
+        return pullQuoteAsHtml;
+    }
+
+    public void setPullQuoteAsHtml( String pullQuoteAsHtml ) {
+        this.pullQuoteAsHtml = pullQuoteAsHtml;
+    }
+
+    public String getBodyAsHtml() {
+        return bodyAsHtml;
+    }
+
+    public void setBodyAsHtml( String bodyAsHtml ) {
+        this.bodyAsHtml = bodyAsHtml;
     }
     
 }

@@ -7,10 +7,13 @@ import java.util.List;
 import java.util.Set;
 import java.util.UUID;
 import org.apache.commons.lang3.StringUtils;
+import org.pegdown.Extensions;
+import org.pegdown.PegDownProcessor;
 
 public class BlogDB
 {
     private HashMap<String, BlogPost> posts = new HashMap();
+    private PegDownProcessor pegdown = new PegDownProcessor( Extensions.ALL );
     
     public String store( BlogPost post ){
         if( StringUtils.isBlank( post.getUuid() ) ){
@@ -18,6 +21,18 @@ public class BlogDB
         } 
         else {
             posts.remove( post.getUuid() );
+        }
+        
+        String pull = post.getPullQuote();
+        if( !StringUtils.isBlank( pull ) ){
+            pull = pegdown.markdownToHtml( pull );
+            post.setPullQuoteAsHtml( pull );
+        }
+        
+        String body = post.getBody();
+        if( !StringUtils.isBlank( body ) ){
+            body = pegdown.markdownToHtml( body );
+            post.setBodyAsHtml( body );
         }
         
         posts.put( post.getUuid(), post );

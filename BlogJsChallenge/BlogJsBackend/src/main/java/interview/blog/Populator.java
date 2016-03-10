@@ -8,12 +8,12 @@ public class Populator
     public void populate( BlogDB db ){
         //01 February 1845
         long ravenDate = new LocalDate( 1845, 2, 1 ).toDate().getTime();
-        BlogPost raven = new BlogPost( null, "The Raven", ravenDate, "Edgar Allan Poe", "aep@deadpoetssociety.com", ravenQuote(), raven() );
+        BlogPost raven = new BlogPost( null, "The Raven", ravenDate, "Edgar Allan Poe", "aep@deadpoetssociety.com", ravenQuote(), raven(), null, null );
         db.store( raven );
         
         // 26 November 1865
         long jabberDate = new LocalDate( 1865, 11, 26 ).toDate().getTime();
-        BlogPost jabber = new BlogPost( null, "The Jabberwocky", jabberDate, "Lewis Carroll", "lewis@wonderland.net", jabberwockyQuote(), jabberwocky() );
+        BlogPost jabber = new BlogPost( null, "The Jabberwocky", jabberDate, "Lewis Carroll", "lewis@wonderland.net", jabberwockyQuote(), jabberwocky(), null, null );
         db.store( jabber );
     }
     
