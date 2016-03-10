@@ -9,6 +9,11 @@
     </parent>
     <artifactId>BlogJsFrontend</artifactId>
     
-    <dependencies>
-    </dependencies>
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/html</directory>
+            </resource>
+        </resources>
+    </build>
 </project>

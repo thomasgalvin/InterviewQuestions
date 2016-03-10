@@ -1,0 +1,35 @@
+html{
+    background-color: rgb(41, 49, 52);
+    color: cyan;
+}
+
+body{
+    height: 100%;
+}
+
+p{
+    margin-top:0;
+}
+
+a{
+    color:white;
+    text-decoration: none;
+}
+
+a:visited{
+    color:cadetblue;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+}
