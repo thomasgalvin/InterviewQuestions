@@ -18,7 +18,7 @@ public class BlogServer extends Application<BlogConfig> {
 
     @Override
     public void initialize( Bootstrap<BlogConfig> bootstrap ) {
-        bootstrap.addBundle( new AssetsBundle( "/interview/blog", "/", "index.html", "blog web app" ) );
+        bootstrap.addBundle( new AssetsBundle( "/blog", "/", "index.html", "blog web app" ) );
 
         final SwaggerBundleConfiguration swaggerConfig = new SwaggerBundleConfiguration();
         swaggerConfig.setResourcePackage( "interview.blog" );
