@@ -29,7 +29,11 @@ public class BlogDB
     }
     
     public BlogPost get( String uuid ) {
-        return posts.get( uuid );
+        BlogPost result =  posts.get( uuid );
+        if( result != null ){
+            result = result.clone();
+        }
+        return result;
     }
     
     public List<BlogPost> get(){
@@ -37,7 +41,11 @@ public class BlogDB
         
         Set<String> keys = posts.keySet();
         for( String key : keys ){
-            result.add(  posts.get(key) );
+            BlogPost post = posts.get(key);
+            if( post != null ){
+                post = post.clone();
+            }
+            result.add(  post );
         }
         
         Collections.sort( result, new BlogPostComparator() );

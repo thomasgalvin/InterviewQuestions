@@ -13,7 +13,13 @@ public class BlogPost
     public BlogPost() {
     }
 
-    public BlogPost( String uuid, String title, long pubDate, String author, String authorEmail, String pullQuote, String body ) {
+    public BlogPost( String uuid, 
+                     String title, 
+                     long pubDate, 
+                     String author, 
+                     String authorEmail, 
+                     String pullQuote, 
+                     String body ) {
         this.uuid = uuid;
         this.title = title;
         this.pubDate = pubDate;
@@ -21,6 +27,10 @@ public class BlogPost
         this.authorEmail = authorEmail;
         this.pullQuote = pullQuote;
         this.body = body;
+    }
+    
+    public BlogPost clone(){
+        return new BlogPost( uuid, title, pubDate, author, authorEmail, pullQuote, body );
     }
 
     public String getUuid() {

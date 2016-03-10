@@ -10,7 +10,9 @@
     <artifactId>BlogJsBackend</artifactId>
     
     <dependencies>
+        
         <!-- dropwizard -->
+        
         <dependency>
             <groupId>io.dropwizard</groupId>
             <artifactId>dropwizard-core</artifactId>
@@ -48,6 +50,22 @@
             <version>0.7.0</version>
         </dependency>
         
+        <!-- renderer -->
+        
+        <dependency>
+            <groupId>org.pegdown</groupId>
+            <artifactId>pegdown</artifactId>
+            <version>1.6.0</version>
+        </dependency>
+
+        <!-- joda time -->
+        
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>2.7</version>
+        </dependency>
+        
         <!-- apache -->
         
         <dependency>
@@ -83,25 +101,25 @@
         <!-- logging -->
         
         <dependency>
-	        <groupId>org.slf4j</groupId>
-	        <artifactId>slf4j-api</artifactId>
-	        <version>1.7.12</version>
-	    </dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.12</version>
+        </dependency>
 	    
-	    <dependency>
-	        <groupId>org.slf4j</groupId>
-	        <artifactId>slf4j-simple</artifactId>
-	        <version>1.7.12</version>
-	        <scope>provided</scope>
-	    </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>1.7.12</version>
+            <scope>provided</scope>
+        </dependency>
         
         <!-- test -->
         
         <dependency>
-             <groupId>junit</groupId>
-             <artifactId>junit</artifactId>
-             <version>4.12</version>
-             <scope>test</scope>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 </project>
