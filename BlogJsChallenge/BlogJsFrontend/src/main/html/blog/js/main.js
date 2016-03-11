@@ -94,10 +94,11 @@ function BlogCtrl( $http, $location, $route, $sce ){
     }
     
     ctrl.toPrintableDate = function( date ){
-        var months = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
         if( date ){
             try{
                 var printable = new Date(date);
+                var months = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
+                
                 var day = printable.getDay()+1;
                 day = "" + day + ordinal(day);
                 
