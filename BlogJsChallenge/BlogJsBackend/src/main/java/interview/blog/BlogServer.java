@@ -28,6 +28,7 @@ public class BlogServer extends Application<BlogConfig> {
         if( !StringUtils.isBlank( webAppFilesystemLocation ) ){
             File location = new File( webAppFilesystemLocation );
             logger.info( "Serving web app from " + location.getAbsolutePath() );
+            System.out.println( "Serving web app from " + location.getAbsolutePath() );
             
             FileAssetsBundle webAppBundle = new FileAssetsBundle(
                 location.getAbsolutePath(),
@@ -37,8 +38,9 @@ public class BlogServer extends Application<BlogConfig> {
             );
             bootstrap.addBundle( webAppBundle );
         }
-        else
-        logger.info( "Serving web app from jar" );{
+        else{
+            logger.info( "Serving web app from jar" );
+            System.out.println( "Serving web app from jar" );
             bootstrap.addBundle( new AssetsBundle( "/blog", "/", "index.html", "blog web app" ) );
         }
         
