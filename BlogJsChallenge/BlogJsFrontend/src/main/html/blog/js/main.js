@@ -1,5 +1,5 @@
 var module = angular.module( 'blog', [ 'ngRoute' ] );
-module.controller( 'BlogCtrl', [ '$http', '$location', '$route', '$sce', BlogCtrl ]);
+module.controller( 'BlogCtrl', [ '$http', '$location', '$route', '$sce', '$window', BlogCtrl ]);
 module.config( BlogConfig );
 
 function BlogConfig($routeProvider, $locationProvider){
@@ -9,10 +9,11 @@ function BlogConfig($routeProvider, $locationProvider){
     $routeProvider.otherwise( { templateUrl: "/views/all-posts.html" } );
 }
 
-function BlogCtrl( $http, $location, $route, $sce ){
+function BlogCtrl( $http, $location, $route, $sce, $window ){
     var ctrl = this;
-    ctrl.posts = [];
+    ctrl.posts = null;
     ctrl.post = {};
+    ctrl.postEdit = {};
     
     /// API location ///
     
@@ -28,11 +29,22 @@ function BlogCtrl( $http, $location, $route, $sce ){
     
     /// load posts ///
     
-    ctrl.loadAllPosts = function(){
+    ctrl.allPosts = function(){
+        if( !ctrl.posts ){
+            if( !ctrl.isLoadingPosts ){
+                ctrl.isLoadingPosts = true;
+                loadAllPosts();
+            }
+        }
+        return ctrl.posts;
+    }
+    
+    function loadAllPosts(){
         $http.get( baseLocation() ).success( loadAllPostsSuccess ).error( loadAllPostsError );
     }
     
     function loadAllPostsSuccess( data ){
+        ctrl.isLoadingPosts = false;
         ctrl.posts = data['posts'];
         for( var i = 0; i < ctrl.posts.length; i++ ){
             var post = ctrl.posts[i];
@@ -41,7 +53,9 @@ function BlogCtrl( $http, $location, $route, $sce ){
     }
     
     function loadAllPostsError( data, status, headers, config ){
-        console.error( "Error loading posts" );
+        ctrl.isLoadingPosts = false;
+        $window.alert( "Unable to load a list of posts" );
+        console.error( "Unable to load a list of posts" );
         console.error( data );
     }
     
@@ -60,6 +74,7 @@ function BlogCtrl( $http, $location, $route, $sce ){
     
     function loadPostSuccess( post ){
         ctrl.loadingUuid = undefined;
+        ctrl.postEdit = {};
         
         trustPostHtml( post );
         ctrl.post = post;
@@ -69,7 +84,8 @@ function BlogCtrl( $http, $location, $route, $sce ){
     
     function loadPostError( data, status, headers, config ){
         ctrl.loadingUuid = undefined;
-        console.error( "Error loading post" );
+        $window.alert( "Unable to load post for viewing" );
+        console.error( "Unable to load post for viewing" );
         console.error( data );
     }
     
@@ -91,21 +107,20 @@ function BlogCtrl( $http, $location, $route, $sce ){
     
     ctrl.currentEditPost = function(){
         var location = $location.path();
-        var uuid = location.replace( "/view/", "" );
-        uuid = uuid.replace( "/edit/", "" );
+        var uuid = location.replace( "/edit/", "" );
         
         if( uuid ){
-            if( uuid !== ctrl.post.uuid ){
+            if( uuid !== ctrl.postEdit.uuid ){
                 ctrl.editPost(uuid);
             }
         }
         
-        return ctrl.post;
+        return ctrl.postEdit;
     }
     
     ctrl.editPost = function( uuid ){
-        if( ctrl.loadingUuid !== uuid ){
-            ctrl.loadingUuid = uuid;
+        if( ctrl.loadingEditUuid !== uuid ){
+            ctrl.loadingEditUuid = uuid;
             
             var url = baseLocation() + "/" + uuid;
             $http.get( url ).success( editPostSuccess ).error( editPostError );
@@ -113,24 +128,40 @@ function BlogCtrl( $http, $location, $route, $sce ){
     }
     
     function editPostSuccess( post ){
-        ctrl.loadingUuid = undefined;
+        ctrl.loadingEditUuid = undefined;
+        ctrl.post = {};
         
         trustPostHtml( post );
-        ctrl.post = post;
+        ctrl.postEdit = post;
         
         $location.path( "/edit/" + post.uuid );
     }
     
     function editPostError( data, status, headers, config ){
-        ctrl.loadingUuid = undefined;
-        console.error( "Error editing post" );
+        ctrl.loadingEditUuid = undefined;
+        $window.alert( "Unable to load post for editing" );
+        console.error( "Unable to load post for editing" );
         console.error( data );
     }
     
     /// saving ///
     
     ctrl.save = function(){
-        console.log( "Save post" );
+        ctrl.postEdit.pullQuoteAsHtml = undefined;
+        ctrl.postEdit.bodyAsHtml = undefined;
+        $http.post( baseLocation(), ctrl.postEdit ).success( saveSuccess ).error( saveError );
+    }
+    
+    function saveSuccess(){
+        ctrl.posts = null;
+        console.log( "Save successful" );
+        $window.alert( "Save successful" );
+    }
+    
+    function saveError( data, status, headers, config ){
+        console.error( "Error saving post" );
+        $window.alert( "Error saving post" );
+        console.error( data );
     }
     
     /// formatting ///
@@ -182,8 +213,8 @@ function BlogCtrl( $http, $location, $route, $sce ){
     
     /// init ///
     
-    function init(){
-        ctrl.loadAllPosts();
-    }
-    init();
+//    function init(){
+//        ctrl.loadAllPosts();
+//    }
+//    init();
 }
