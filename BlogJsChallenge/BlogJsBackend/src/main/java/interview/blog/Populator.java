@@ -56,10 +56,7 @@ public class Populator
     
     public static String cthulhu() {
         String one = 
-               "# The Call of Cthulhu\n"
-               + "## By H. P. Lovecraft\n"
-               + "\n"
-               + "> (Found Among the Papers of the Late Francis Wayland Thurston, of Boston)\n"
+               "> (Found Among the Papers of the Late Francis Wayland Thurston, of Boston)\n"
                + "\n"
                + "\n"
                + "\n"

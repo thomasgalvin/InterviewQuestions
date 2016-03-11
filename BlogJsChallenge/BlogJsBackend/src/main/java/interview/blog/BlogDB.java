@@ -2,6 +2,7 @@ package interview.blog;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Set;
@@ -21,6 +22,10 @@ public class BlogDB
         } 
         else {
             posts.remove( post.getUuid() );
+        }
+        
+        if( post.getPubDate() == 0 ){
+            post.setPubDate( new Date().getTime() );
         }
         
         String pull = post.getPullQuote();

@@ -48,16 +48,14 @@ function BlogCtrl( $http, $location, $route, $sce ){
     /// load single post ///
     
     ctrl.showPost = function( uuid ){
-        if( ctrl.loadingUuid !== uuid ){
-            ctrl.loadingUuid = uuid;
-            //console.log( "Loading " + uuid );
-            
-            var url = baseLocation() + "/" + uuid;
-            $http.get( url ).success( loadPostSuccess ).error( loadPostError );
+        if( uuid ){
+            if( ctrl.loadingUuid !== uuid ){
+                ctrl.loadingUuid = uuid;
+
+                var url = baseLocation() + "/" + uuid;
+                $http.get( url ).success( loadPostSuccess ).error( loadPostError );
+            }
         }
-//        else{
-//            console.log( "Loading already in progress" );
-//        }
     }
     
     function loadPostSuccess( post ){
@@ -76,14 +74,63 @@ function BlogCtrl( $http, $location, $route, $sce ){
     }
     
     ctrl.currentPost = function(){
-        if( !ctrl.post.uuid ){
-            //console.log( "Need to load post..." );
-            
-            var location = $location.path();
-            var uuid = location.replace( "/view/", "" );
-            ctrl.showPost(uuid);
+        var location = $location.path();
+        var uuid = location.replace( "/view/", "" );
+        uuid = uuid.replace( "/edit/", "" );
+        
+        if( uuid ){
+            if( uuid !== ctrl.post.uuid ){
+                ctrl.showPost(uuid);
+            }
         }
+        
         return ctrl.post;
+    }
+    
+    /// editing ///
+    
+    ctrl.currentEditPost = function(){
+        var location = $location.path();
+        var uuid = location.replace( "/view/", "" );
+        uuid = uuid.replace( "/edit/", "" );
+        
+        if( uuid ){
+            if( uuid !== ctrl.post.uuid ){
+                ctrl.editPost(uuid);
+            }
+        }
+        
+        return ctrl.post;
+    }
+    
+    ctrl.editPost = function( uuid ){
+        if( ctrl.loadingUuid !== uuid ){
+            ctrl.loadingUuid = uuid;
+            
+            var url = baseLocation() + "/" + uuid;
+            $http.get( url ).success( editPostSuccess ).error( editPostError );
+        }
+    }
+    
+    function editPostSuccess( post ){
+        ctrl.loadingUuid = undefined;
+        
+        trustPostHtml( post );
+        ctrl.post = post;
+        
+        $location.path( "/edit/" + post.uuid );
+    }
+    
+    function editPostError( data, status, headers, config ){
+        ctrl.loadingUuid = undefined;
+        console.error( "Error editing post" );
+        console.error( data );
+    }
+    
+    /// saving ///
+    
+    ctrl.save = function(){
+        console.log( "Save post" );
     }
     
     /// formatting ///
