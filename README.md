@@ -1,6 +1,6 @@
 # Interview Questions #
 
-A handul of phone-screen questions, designed to quickly eliminate people who
+A handful of phone-screen questions, designed to quickly eliminate people who 
 are not worth a full, in-person technical interview.
 
 ## General Questions ##
